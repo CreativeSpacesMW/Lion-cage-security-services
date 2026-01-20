@@ -1,0 +1,44 @@
+{
+  "standard": {
+    "rate": 150,
+    "coverage": 2000,
+    "description": "Standard Security Guard",
+    "features": [
+      "Patrol and monitoring",
+      "Access control",
+      "Incident reporting",
+      "Basic first aid certified"
+    ]
+  },
+  "armed": {
+    "rate": 250,
+    "coverage": 1500,
+    "description": "Armed Security Guard",
+    "features": [
+      "All standard guard features",
+      "Firearms trained and licensed",
+      "High-risk environment protection",
+      "Advanced threat assessment"
+    ]
+  },
+  "k9": {
+    "rate": 350,
+    "coverage": 1000,
+    "description": "K9 Security Unit",
+    "features": [
+      "Handler and trained canine",
+      "Narcotics detection",
+      "Explosives detection",
+      "Search and patrol capabilities"
+    ]
+  },
+  "shiftMultipliers": {
+    "day": 1.0,
+    "night": 1.5,
+    "24h": 3.0
+  },
+  "minimumDuration": 1,
+  "maximumDuration": 365,
+  "currency": "USD",
+  "taxRate": 0.08
+}

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Portal - Lion Cage Security</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="loginScreen">
+        <div class="login-container">
+            <div class="login-header">
+                <i class="fas fa-lock"></i>
+                <h2>Admin Portal</h2>
+                <p>Lion Cage Security Services</p>
+            </div>
+            
+            <form id="adminLoginForm">
+                <div class="form-group">
+                    <label for="username"><i class="fas fa-user"></i> Username</label>
+                    <input type="text" id="username" placeholder="Enter admin username" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password"><i class="fas fa-key"></i> Password</label>
+                    <input type="password" id="password" placeholder="Enter password" required>
+                </div>
+                
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-sign-in-alt"></i> Login
+                    </button>
+                </div>
+                
+                <div id="loginError" class="error-message"></div>
+            </form>
+            
+            <div class="login-footer">
+                <p><i class="fas fa-exclamation-triangle"></i> Restricted Access</p>
+                <small>Authorized personnel only</small>
+            </div>
+        </div>
+    </div>
+    
+    <div id="adminContent" class="hidden">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-brand">
+                    <img src="https://via.placeholder.com/40x40/F9B233/231F20?text=LC" alt="Lion Cage Logo">
+                    <h1>Admin Portal</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Site Home</a></li>
+                    <li><button id="logoutBtn" class="btn btn-danger"><i class="fas fa-sign-out-alt"></i> Logout</button></li>
+                </ul>
+            </div>
+        </nav>
+        
+        <main class="container">
+            <section class="section">
+                <h1><i class="fas fa-tachometer-alt"></i> Admin Dashboard</h1>
+                <p>Welcome to the Lion Cage Security Services administration portal</p>
+                
+                <div class="dashboard">
+                    <div class="dashboard-cards">
+                        <div class="dashboard-card">
+                            <h3><i class="fas fa-chart-bar"></i> Quote Analytics</h3>
+                            <div class="stat">
+                                <h4 id="totalQuotes">0</h4>
+                                <p>Total Quotes Generated</p>
+                            </div>
+                        </div>
+                        
+                        <div class="dashboard-card">
+                            <h3><i class="fas fa-exclamation-triangle"></i> Recent Reports</h3>
+                            <div class="stat">
+                                <h4 id="totalReports">0</h4>
+                                <p>No-Show Reports</p>
+                            </div>
+                        </div>
+                        
+                        <div class="dashboard-card">
+                            <h3><i class="fas fa-whatsapp"></i> Contact Requests</h3>
+                            <div class="stat">
+                                <h4 id="totalContacts">0</h4>
+                                <p>WhatsApp Inquiries</p>
+                            </div>
+                        </div>
+                        
+                        <div class="dashboard-card">
+                            <h3><i class="fas fa-cog"></i> System Status</h3>
+                            <div class="status-indicator online">
+                                <i class="fas fa-check-circle"></i>
+                                <span>All Systems Operational</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="admin-actions">
+                        <h2><i class="fas fa-tasks"></i> Quick Actions</h2>
+                        
+                        <div class="action-buttons">
+                            <button class="btn btn-primary">
+                                <i class="fas fa-file-export"></i> Export Reports
+                            </button>
+                            
+                            <button class="btn btn-primary">
+                                <i class="fas fa-users"></i> Manage Guards
+                            </button>
+                            
+                            <button class="btn btn-primary">
+                                <i class="fas fa-calculator"></i> Update Rates
+                            </button>
+                            
+                            <button class="btn btn-primary">
+                                <i class="fas fa-chart-pie"></i> View Analytics
+                            </button>
+                        </div>
+                        
+                        <div class="recent-activity">
+                            <h3><i class="fas fa-history"></i> Recent Activity</h3>
+                            <div id="activityLog" class="activity-log">
+                                <p>No recent activity</p>
+                            </div>
+                        </div>
+                        
+                        <div class="system-controls">
+                            <h3><i class="fas fa-sliders-h"></i> System Controls</h3>
+                            <div class="controls">
+                                <button id="clearLocalStorage" class="btn btn-danger">
+                                    <i class="fas fa-trash"></i> Clear Session Data
+                                </button>
+                                
+                                <button id="refreshData" class="btn">
+                                    <i class="fas fa-sync"></i> Refresh Data
+                                </button>
+                                
+                                <button id="backupData" class="btn">
+                                    <i class="fas fa-database"></i> Backup Data
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer class="footer">
+            <div class="container">
+                <p>&copy; 2024 Lion Cage Security Services Admin Portal. Secure Access Logged.</p>
+                <p id="adminInfo"></p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

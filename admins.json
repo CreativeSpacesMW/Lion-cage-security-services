@@ -1,0 +1,23 @@
+[
+  {
+    "username": "admin",
+    "password": "lioncage123",
+    "role": "Super Administrator",
+    "email": "admin@lioncageglobal.com",
+    "permissions": ["all"]
+  },
+  {
+    "username": "security",
+    "password": "secure2024",
+    "role": "Security Manager",
+    "email": "security@lioncageglobal.com",
+    "permissions": ["view_reports", "view_quotes", "manage_guards"]
+  },
+  {
+    "username": "operations",
+    "password": "ops2024",
+    "role": "Operations Manager",
+    "email": "ops@lioncageglobal.com",
+    "permissions": ["view_quotes", "view_contacts", "export_data"]
+  }
+]

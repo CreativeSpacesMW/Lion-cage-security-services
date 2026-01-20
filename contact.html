@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Lion Cage Security</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <img src="https://via.placeholder.com/40x40/F9B233/231F20?text=LC" alt="Lion Cage Logo">
+                <h1>Lion Cage Security</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+                <li><a href="contact.html" class="active"><i class="fas fa-phone"></i> Contact</a></li>
+                <li><a href="admin.html"><i class="fas fa-lock"></i> Admin</a></li>
+            </ul>
+            <button class="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="section">
+            <h1>Contact Lion Cage Security</h1>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h2><i class="fas fa-headset"></i> Get in Touch</h2>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h3>Emergency Hotline</h3>
+                                <p>1-800-SECURITY (732-8748)</p>
+                                <small>24/7 Emergency Response</small>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h3>Email</h3>
+                                <p>security@lioncageglobal.com</p>
+                                <small>Response within 2 hours</small>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h3>Headquarters</h3>
+                                <p>123 Security Plaza, Suite 500</p>
+                                <p>New York, NY 10001</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h3>Business Hours</h3>
+                                <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
+                                <p>Saturday: 9:00 AM - 2:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h2><i class="fab fa-whatsapp"></i> WhatsApp Contact Form</h2>
+                    <p>Fill out this form to send us a WhatsApp message directly</p>
+                    
+                    <form id="whatsappForm">
+                        <div class="form-group">
+                            <label for="contactName"><i class="fas fa-user"></i> Full Name</label>
+                            <input type="text" id="contactName" placeholder="Your full name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactPhone"><i class="fas fa-phone"></i> Phone Number</label>
+                            <input type="tel" id="contactPhone" placeholder="Include country code (e.g., +1234567890)" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="serviceType"><i class="fas fa-concierge-bell"></i> Service Interest</label>
+                            <select id="serviceType" required>
+                                <option value="">Select a service</option>
+                                <option value="Standard Guard">Standard Security</option>
+                                <option value="Armed Guard">Armed Protection</option>
+                                <option value="K9 Unit">K9 Security</option>
+                                <option value="Consultation">Security Consultation</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message"><i class="fas fa-comment"></i> Message</label>
+                            <textarea id="message" rows="4" placeholder="Describe your security needs..." required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="urgency"><i class="fas fa-exclamation-circle"></i> Urgency Level</label>
+                            <select id="urgency">
+                                <option value="Normal">Normal (24-48 hour response)</option>
+                                <option value="Urgent">Urgent (Same day)</option>
+                                <option value="Emergency">Emergency (Immediate)</option>
+                            </select>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-success">
+                            <i class="fab fa-whatsapp"></i> Send via WhatsApp
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Lion Cage Security Services. Part of Lion Cage Global Holdings.</p>
+            <p>All security personnel are licensed, bonded, and insured.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
