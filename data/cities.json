@@ -1,0 +1,16 @@
+{
+  "cities": [
+    {
+      "name": "Lilongwe",
+      "phone": "+265 899 732 020",
+      "address": "",
+      "location": "Liolongwe"
+    },
+    {
+      "name": "Blantyre",
+      "phone": "+265 883 730 025",
+      "address": "Apollo Arcade Building",
+      "location": "Near Ziboliboli"
+    }
+  ]
+}

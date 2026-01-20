@@ -522,6 +522,83 @@ function loadRecentActivity(activities) {
     activityLog.innerHTML = html;
 }
 
+// ====== FOOTER RENDER ======
+function renderFooter() {
+    fetch('data/cities.json')
+        .then(response => response.json())
+        .then(data => {
+            const footerHTML = `
+                <footer class="footer">
+                    <div class="footer-content">
+                        <div>
+                            <div class="footer-logo">
+                                <div class="footer-logo-icon">
+                                    <span class="text-lion-yellow font-black text-sm">LC</span>
+                                </div>
+                                <span class="footer-logo-text">LION CAGE</span>
+                            </div>
+                            <p class="footer-description">
+                                Malawi's premier logistics partner. Dedicated to reliability, speed, and safety in every parcel we handle.
+                            </p>
+                            <div class="footer-social">
+                                <a href="#" class="social-icon">FB</a>
+                                <a href="#" class="social-icon">IG</a>
+                                <a href="#" class="social-icon">WA</a>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 class="footer-heading">Quick Links</h4>
+                            <ul class="footer-links">
+                                <li><a href="logistics.html" class="footer-link">Book a Pickup</a></li>
+                                <li><a href="index.html#tracking" class="footer-link">Track Package</a></li>
+                                <li><a href="market.html" class="footer-link">Lion Market</a></li>
+                                <li><a href="logistics.html#schedule" class="footer-link">Intercity Schedule</a></li>
+                                <li><a href="seller-hub.html" class="footer-link">Partner with Us</a></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h4 class="footer-heading">Our Branches</h4>
+                            <ul class="footer-links">
+                                ${data.cities.map(city => `
+                                    <li>
+                                        <span class="footer-city">${city.name}</span>
+                                        <span class="footer-phone">${city.phone}</span>
+                                    </li>
+                                `).join('')}
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h4 class="footer-heading">Headquarters</h4>
+                            <p class="footer-description">
+                                Lilongwe Olympic Mall,<br>
+                                Ekhaya Complex, Area 2
+                            </p>
+                            <p class="text-sm font-bold text-white mb-2">info@lioncagecouriers.com</p>
+                            <p class="text-sm font-bold text-white">+265 (0) 993 732 013</p>
+                        </div>
+                    </div>
+
+                    <div class="footer-bottom">
+                        <p class="footer-copyright">
+                            © ${new Date().getFullYear()} Lion Cage Courier Services & Logistics Ltd. All Rights Reserved.
+                        </p>
+                        <div class="footer-legal">
+                            <a href="#" class="legal-link">Privacy Policy</a>
+                            <a href="#" class="legal-link">Terms of Service</a>
+                            <a href="#" class="legal-link">Relocation Guide</a>
+                        </div>
+                    </div>
+                </footer>
+            `;
+            
+            document.getElementById('footer-container').innerHTML = footerHTML;
+        });
+}
+
+
 /**
  * Setup mobile navigation toggle
  */
