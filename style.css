@@ -120,6 +120,8 @@ p {
 
 .nav-brand img {
     border-radius: 4px;
+    width: clamp(40px, 6vw, 80px);
+    height: auto;
 }
 
 .nav-brand h1 {
@@ -306,7 +308,7 @@ p {
 
 .mission-vision {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(clamp(240px, 22vw, 300px), 1fr));
     gap: 2rem;
 }
 
@@ -320,7 +322,7 @@ p {
 
 .services-grid .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(clamp(200px, 18vw, 250px), 1fr));
     gap: 2rem;
     margin-top: 1.5rem;
 }
@@ -415,7 +417,7 @@ p {
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
     width: 100%;
-    max-width: 400px;
+    max-width: clamp(240px, 60vw, 400px);
 }
 
 .login-header {
@@ -488,7 +490,7 @@ p {
     background: white;
     padding: 1rem;
     border-radius: 8px;
-    min-height: 200px;
+    min-height: clamp(160px, 30vh, 200px);
     margin-top: 1rem;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
