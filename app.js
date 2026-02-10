@@ -56,8 +56,11 @@ async function initializeApp() {
     // Setup mobile navigation
     setupMobileNav();
     
-    // Check admin authentication
+    // Check admin authentication (admin.html)
     checkAdminAuth();
+
+    // Render dynamic footer where supported (e.g. admin portal)
+    renderFooter();
 }
 
 /**
@@ -81,6 +84,8 @@ async function loadGuardRates() {
 
 /**
  * Load admin credentials from admins.json
+ * NOTE: This approach is suitable for demos or internal tools only.
+ * For production, move admin authentication to a secure backend service.
  */
 async function loadAdmins() {
     try {
@@ -165,15 +170,19 @@ function calculateQuote() {
         // Calculate guards needed
         const guardsNeeded = Math.ceil(areaSize / rates.coverage);
         
-        // Calculate shift multiplier
+        // Calculate shift multiplier (prefer config from data.json if available)
         let shiftMultiplier = 1;
-        switch(shiftType) {
-            case 'night':
-                shiftMultiplier = 1.5; // 50% more for night shift
-                break;
-            case '24h':
-                shiftMultiplier = 3; // Triple for 24-hour coverage
-                break;
+        if (guardRates.shiftMultipliers && guardRates.shiftMultipliers[shiftType]) {
+            shiftMultiplier = guardRates.shiftMultipliers[shiftType];
+        } else {
+            switch(shiftType) {
+                case 'night':
+                    shiftMultiplier = 1.5; // 50% more for night shift
+                    break;
+                case '24h':
+                    shiftMultiplier = 3; // Triple for 24-hour coverage
+                    break;
+            }
         }
         
         // Calculate costs
@@ -524,6 +533,9 @@ function loadRecentActivity(activities) {
 
 // ====== FOOTER RENDER ======
 function renderFooter() {
+    const footerContainer = document.getElementById('footer-container');
+    if (!footerContainer) return;
+
     fetch('data/cities.json')
         .then(response => response.json())
         .then(data => {
@@ -594,7 +606,10 @@ function renderFooter() {
                 </footer>
             `;
             
-            document.getElementById('footer-container').innerHTML = footerHTML;
+            footerContainer.innerHTML = footerHTML;
+        })
+        .catch(error => {
+            console.error('Failed to render dynamic footer:', error);
         });
 }
 
